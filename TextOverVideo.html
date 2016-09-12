@@ -1,0 +1,67 @@
+<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/735173/poster.jpg" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="bgvid">
+  <source src="https://s3.amazonaws.com/distill-videos/videos/processed/33/Cold2520Winter2520Dream-HD3_1.mp4.mp4" type="video/mp4"/>
+</video>
+<header class="page-header">
+  <h1>nature always wears</h1>
+  <h4>the colour of spirit</h4>
+</header>
+@import "https://fonts.googleapis.com/css?family=Montserrat:400";
+:root, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat';
+  font-size: 10px;
+  font-weight: 400;
+}
+
+body {
+  position: relative;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 960px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  :root {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  :root {
+    font-size: 18px;
+  }
+}
+.bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/735173/poster.jpg");
+  background-size: cover;
+}
+
+.page-header {
+  font-size: 1.125rem;
+  position: absolute;
+  text-align: left;
+  bottom: 5em;
+  left: 5em;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, 0.9);
+  mix-blend-mode: multiply;
+}
