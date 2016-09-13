@@ -1,0 +1,105 @@
+<div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--
+  Choreographs two layers moving closer and further from the 'camera'. Hitchcock would have dollied and zoomed, we just translateZ.
+  Lokesh Dhakar
+  twitter.com/lokesh
+-->
+<div class='ui'>
+  <button>
+    Toggle
+  </button>
+</div>
+<div class='box fore-box'>
+  <div class='img fore'></div>
+</div>
+<div class='box bg-box'>
+  <div class='img bg'></div>
+</div>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  position: absolute;
+  perspective: 400px;
+  width: 750px;
+  height: 478.75px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: perspective 5s;
+}
+
+.fore-box {
+  z-index: 10;
+}
+
+.bg-box {
+  z-index: 5;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750px;
+  height: 478.75px;
+  transition: all 5s;
+}
+
+.fore {
+  z-index: 10;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9332/hills-foreground.png);
+  background-size: cover;
+}
+
+.bg {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9332/hills-bg.jpg);
+  transform: translateZ(150px);
+  background-size: cover;
+}
+
+.box.on .fore {
+  transform: translateZ(200px);
+}
+.box.on .bg {
+  transform: translateZ(0);
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.ui {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+button {
+  width: 84px;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  background: gold;
+  border: 2px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  border-radius: 4px;
+}
+button:hover {
+  background: #ffdf33;
+}
+button:active {
+  color: gold;
+  background: black;
+}
+</style>
+<script>
+$('button').on('click', function() {
+  $('.box').toggleClass('on');
+})
+</script>
+</div>
